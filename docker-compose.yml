@@ -8,11 +8,11 @@ services:
       - DISCORD_TOKEN=${DISCORD_TOKEN}
       - CLIENT_ID=${CLIENT_ID}
       - GUILD_ID=${GUILD_ID}
-      - MULTI_GUILD=${MULTI_GUILD:-false}
+      - MULTI_GUILD=${MULTI_GUILD:-true}
       - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
-      - LAVALINK_HOST=lavalink
-      - LAVALINK_PORT=2333
-      - LAVALINK_PASSWORD=${LAVALINK_PASSWORD:-youshallnotpass}
+      - LAVALINK_HOST=eh1.ellenhost.qzz.io
+      - LAVALINK_PORT=2012
+      - LAVALINK_PASSWORD=ellencloud.qzz.io
       - LAVALINK_SECURE=false
       - PORT=3000
     depends_on:
@@ -25,7 +25,7 @@ services:
 
   lavalink:
     image: ghcr.io/lavalink-devs/lavalink:4
-    container_name: titanbot-lavalink
+    container_name: velpira-lavalink
     restart: unless-stopped
     environment:
       - LAVALINK_PASSWORD=${LAVALINK_PASSWORD:-youshallnotpass}
